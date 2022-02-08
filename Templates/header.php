@@ -14,4 +14,4 @@
             <td colspan="2" class="header">Супер блог</td>
         </tr>
         <tr>
-            <td>
+            <td class="main">

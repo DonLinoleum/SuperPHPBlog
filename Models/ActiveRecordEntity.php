@@ -134,7 +134,23 @@ abstract class ActiveRecordEntity
        $db->Query($sql,[":id"=>$id],static::class);
         $this->id = null;
     }
-     
+
+    public static function findOneByColumn (string $columnName,$value) : ?self
+    {
+        $db = \Services\Db::getInstace();
+        $result = $db->Query(
+            'SELECT * FROM ' . static::getTableName() . ' WHERE ' . $columnName . ' = :value LIMIT 1',
+            [':value'=>$value],
+            static::class
+        );
+        if ($result === [])
+        {
+            return null;
+        }
+        var_dump($result);
+        return $result[0];
+    }
+   
 }
 
 
