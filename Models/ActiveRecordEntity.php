@@ -130,7 +130,7 @@ abstract class ActiveRecordEntity
     {
         $sql = "DELETE FROM " . static::getTableName() . " WHERE id = :id;";
         $db = \Services\Db::getInstace();
-       
+        
        $db->Query($sql,[":id"=>$id],static::class);
         $this->id = null;
     }
