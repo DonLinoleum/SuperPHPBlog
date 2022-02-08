@@ -11,7 +11,7 @@
 <body>
     <table class="layout">
         <tr>
-            <td colspan="2" class="header">Мой блог</td>
+            <td colspan="2" class="header">Супер блог</td>
         </tr>
         <tr>
             <td>

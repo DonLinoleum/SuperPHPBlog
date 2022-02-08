@@ -9,7 +9,6 @@ spl_autoload_register('loader');
 
 $route = $_GET['route'] ??  '';
 $routes = require __DIR__ . "/routes.php";
-var_dump($route);
 $isRouteFound = false;
 foreach ($routes as $pattern => $controllerAndAction)
 {
