@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>sd</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="400" height="300">PUK</canvas>
+        <script>
+            let gl = null;
+            let canvas = document.getElementById("canvas");
+            window.onload = () =>
+            {
+                try
+                {
+                    gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+                }
+                catch(e)
+                {}
+                    if (!gl) {alert("жопа");}
+                    if (gl)
+                    {
+                        gl.clearColor(1,0.5,0.2,1.0);
+                        gl.clear(gl.COLOR_BUFFER_BIT);
+                    }
+            }
+        </script>
+    </body>
+</html>
