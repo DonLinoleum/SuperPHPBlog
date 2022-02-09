@@ -1,65 +1,133 @@
+*
+{
+    box-sizing: border-box;
+}
+
+@font-face
+{
+    font-family: "Header";
+    src :url("./Fonts/ChristmasReignDecoPersonal.ttf");
+}
+
+@font-face {
+    font-family: "Sidebar";
+    src: url(./Fonts/TabulaPeutingeriana.ttf);
+}
+
+@font-face {
+    font-family: "Regular";
+    src: url(./Fonts/2Massj1808Normal.otf);
+}
+
 body
 {
     background-image: url("./Img/background.jpg");
     background-size: cover;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Times New Roman', Times, serif ;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Times New Roman', Times, serif ; 
+    font-size: 1rem;
 }
-.layout
+a, a:visited
 {
-    background-color: #fcfffa;
-}
-
-table
-{
-    border-spacing: 7px 11px;
-}
-
-td
-{
-    background-color: #f0e8b4;
-    border-radius:50px;
-}
-
-
-tr:first-child td 
-{
-    text-align: center;
-    color:#106100;
-    font-size:2.3rem;
-    border-top: none;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.layout {
-    width: 100%;
-    max-width: 1500px;
-    margin: auto;
-    background-color:transparent;
-}
-
-.layout tr td {
-    padding: 20px;
-    vertical-align: top;
-}
-
-.header {
-    font-size: 30px;
-}
-
-.footer {
-    text-align: center;
-}
-
-.sidebarHeader {
-    font-size: 20px;
-}
-
-.sidebar ul {
-    padding-left: 20px;
-}
-
-a, a:visited {
-    color: darkgreen;
+    color: green;
     text-decoration: none;
 }
 
+
+.layout
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header,.footer
+{
+    display: flex;
+    background-color: #e3d88f;
+    margin:1rem;
+    border-radius: 20px;
+    padding:0.5rem;
+    min-width: 1200px;
+    justify-content: center;
+}
+
+.header h1
+{
+    font-family: "Header";
+    color: #1d3b01;
+    font-size: 3rem;
+    align-self: center;
+}
+
+.header img
+{
+    width:300px;
+    height:200px;
+    margin-right: -10rem;
+}
+
+.content
+{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    min-width: 1200px;
+    border-radius: 20px;
+}
+
+.main
+{
+    flex: 2 2 12rem;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #f0e8b4;
+    font-family: "Regular";
+}
+
+.main h2
+{
+    color: green;
+}
+
+.article
+{
+    background-color: #d4cd9f;
+    border-radius: 20px;
+    margin:0.5rem;
+}
+
+.sidebar
+{
+    flex:1 1 1rem;
+    border-radius: 20px;
+    margin-right: 2rem;
+    border-radius: 20px;
+    background-color: #f0e8b4;
+    padding: 1rem;
+    font-family: "Sidebar";
+}
+
+.sidebar li
+{
+    font-size:1.5rem;
+}
+
+#paper
+{
+    width:300px;
+    height:300px;
+    margin:0 auto;
+    transition:all 2s;
+}
+
+#paper:hover
+{
+    opacity: 0.5;
+}
+
+.footer p
+{
+    font-family: "Header";
+    font-size: 1.8rem;
+    color: #1d3b01;
+}

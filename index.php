@@ -27,6 +27,7 @@ if (!$isRouteFound)
 
 unset ($matches[0]);
 
+
 $controller = new $controllerAndAction[0]();
 $method = $controllerAndAction[1];
 $controller->$method(...$matches);

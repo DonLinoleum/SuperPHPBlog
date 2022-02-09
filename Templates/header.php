@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,9 +10,19 @@
 
 </head>
 <body>
-    <table class="layout">
-        <tr>
-            <td colspan="2" class="header">Супер блог</td>
-        </tr>
-        <tr>
-            <td class="main">
+    <div class="layout">
+        <div class="header">
+            <h1>Блог Веселого Гуся</h1>
+            <img src="/Templates/Main/Img/goose.png"/>
+        </div>  
+        <div class="content">
+        <div class="sidebar">
+    <h2>Меню:</h2>
+    <ul>
+        <li><a href="/">Главная страница</a></li>
+        <li><a href="/about-me">Обо мне</a></li>
+    </ul>
+    <img id="paper" src="/Templates/Main/Img/paper.png"/>
+</div>
+    <div class="main">
+            
