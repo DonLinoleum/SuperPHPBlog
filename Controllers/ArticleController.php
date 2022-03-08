@@ -1,19 +1,16 @@
 <?php
 namespace Controllers;
 
+use Exceptions\UnauthorizedException;
+use InvalidArgumentException;
 use Models\Articles\Article;
 use Models\Users\User;
 use stdClass;
 
-class ArticleController
+class ArticleController extends AbstractController
 {
-    private $view;
   
-
-    public function __construct()
-    {
-        $this->view = new \View\View(__DIR__ . "/../Templates");     
-    }
+  
     public function view(int $articleId)
     {
         $result = Article::getById($articleId);
@@ -30,39 +27,68 @@ class ArticleController
 
     public function edit ($articleId)
     {
-        $result = Article::getById($articleId);
+        $article = Article::getById($articleId);
        
-        if ($result === null)
+        if ($article === null)
         {
-            throw new \Exceptions\NotFoundException("хуй");
+            throw new UnauthorizedException();
         }
         
-        $result->setName("Какой то pidr");
-        $result->setText("хуйня какая то");
-        $result->save();
+        if (!empty($_POST))
+        {
+            try
+            {
+                $article->updateFromArray($_POST);
+            }
+            catch(InvalidArgumentException $e)
+            {
+                $this->view->renderHtml('/Articles/edit.php',['error'=>$e->getMessage(),'article'=>$article]);
+                return;
+            }
+            header("Location: /articles/" . $article->getId(),true,302);
+            die();
+        }
+
+        $this->view->renderHtml('/Articles/edit.php',['article'=>$article]);
+
     }
 
     public function add () : void
     {
-        $author = User::getById(1);
+        if ($this->user === null){
+            throw new UnauthorizedException();
+        }
 
-        $article = new Article();
-        $article->setAuthor($author);
-        $article->setName("Супер статья про перец");
-        $article->setText("Однажды перец сгнил и умер. Конец");
+        if (!empty($_POST))
+        {
+            try
+            {
+                $article = Article::createFromArray($_POST,$this->user);
+            }
+            catch(InvalidArgumentException $e)
+            {
+           
+                    $this->view->renderHtml('/Articles/add.php',['error'=>$e->getMessage()]);
+                    return;
+            }
 
-        $article->save();
-       
+            header("Location: /articles/" . $article->getId(),true,302);
+            die();
+        }
+        
+        $this->view->renderHtml('/articles/add.php');
     }
 
     public function delete($articleId)
     {
         $result = Article::getById($articleId);
+        
         if ($result!==null)
         {
-        var_dump($result);
         $result->delete($articleId);
+        header("Location: /");
         }
+        
         else
         {
             $error = "Ашыпка. Не найден чото";
@@ -70,9 +96,6 @@ class ArticleController
         }
     }
 }
-
-
-
 
 
 ?>

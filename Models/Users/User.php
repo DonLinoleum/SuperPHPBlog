@@ -1,6 +1,7 @@
 <?php
 namespace Models\Users;
 
+use Composer\InstalledVersions;
 use InvalidArgumentException;
 
 class User extends \Models\ActiveRecordEntity
@@ -21,6 +22,16 @@ class User extends \Models\ActiveRecordEntity
     public function getNickName() : string
     {
         return $this->nickname;
+    }
+
+    public function getPasswordHash() : string
+    {
+        return $this->passwordHash;
+    }
+
+    public function getAuthToken() : string
+    {
+        return $this->authToken;
     }
 
     static protected  function getTableName() : string
@@ -73,6 +84,51 @@ class User extends \Models\ActiveRecordEntity
         return $user;
 
 
+    }
+
+    public function activate() : void
+    {
+        $this->isConfirmed = true;
+        $this->save();
+    }
+
+    public static function login(array $loginData) : User
+    {
+        if (empty($loginData['email']))
+        {
+            throw new InvalidArgumentException('Не передан email!');
+        }
+
+        if (empty($loginData['password']))
+        {
+            throw new InvalidArgumentException('Не передан password!');
+        }
+
+        $user = User::findOneByColumn('email',$loginData['email']);
+        if ($user === null)
+        {
+            throw new InvalidArgumentException('Нет пользователя с таким email!');
+        }
+
+        if (!password_verify($loginData['password'],$user->getPasswordHash()))
+        {
+            throw new InvalidArgumentException('Неправильный пароль!');
+        }
+
+        if (!$user->isConfirmed)
+        {
+            throw new InvalidArgumentException('Пользователь не подтвержден!');
+        }
+
+        $user->refreshAuthToken();
+        $user->save();
+
+        return $user;
+    }
+
+    private function refreshAuthToken()
+    {
+        $this->authToken = sha1(random_bytes(100) . random_bytes(100));
     }
 }
 

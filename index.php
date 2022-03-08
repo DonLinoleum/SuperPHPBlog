@@ -1,4 +1,5 @@
 <?php
+
 try
 {
 function loader(string $classname)
@@ -27,6 +28,7 @@ if (!$isRouteFound)
 
 unset ($matches[0]);
 
+
 $controller = new $controllerAndAction[0]();
 $method = $controllerAndAction[1];
 $controller->$method(...$matches);
@@ -40,6 +42,12 @@ catch (\Exceptions\NotFoundException $e)
 {
     $view = new \View\View(__DIR__."/Templates/Errors/");
    $view->renderHtml("404.php",['error'=>$e->getMessage()],404);
+}
+
+catch(\Exceptions\UnauthorizedException $e)
+{
+    $view = new \View\View(__DIR__."/Templates/Errors/");
+    $view->renderHtml('401.php',['error' => $e->getMessage()],401);
 }
 
 ?>

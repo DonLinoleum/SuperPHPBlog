@@ -1,0 +1,44 @@
+input
+{
+    height:2rem;
+    background-color: inherit;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: brown;
+    font-family: "Regular";
+    outline: none;
+}
+
+textarea
+{
+    font-family: "Regular";
+    border-radius: 5px;
+    height: 400px;
+}
+
+button
+{
+    font-family: "Regular";
+    background-color: #611414;
+    color: antiquewhite;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    width: 10rem;
+    height: 3rem;
+    transition: all 0.1s;
+}
+
+button:hover
+{
+    background-color: #5c3030;
+    color: white;
+    box-shadow: 0.5px 0.5px 6px 0.5px black;
+}
+
+button:active
+{
+    background-color: #452020;
+    color: white;
+    box-shadow: 0.5px 0.5px 6px 0.5px black;
+}

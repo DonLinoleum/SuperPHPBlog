@@ -1,18 +1,10 @@
-</td>
-            <td width="300px" class="sidebar">
-            <div class="sidebarHeader">Меню</div>
-            <ul>
-                <li><a href="/">Главная страница</a></li>
-                <li><a href="/about-me">Обо мне</a></li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td class="footer" colspan="2">Все права защищены (c) Супер блог</td>
-    </tr>
+</div>
+   </div>
+<div class="footer">
+    <p>Все права защищены (c) Супер блог</p>
+</div>
+</div>
 
-        </tr>
-    </table>
-    
+
 </body>
 </html>

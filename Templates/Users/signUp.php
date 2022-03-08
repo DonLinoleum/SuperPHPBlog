@@ -13,7 +13,7 @@ include_once (__DIR__ . "/../header.php");?>
         <br><br>
         <label>Password <input type="password" name="password" value="<?= $_POST['password'] ?? '' ?>"></label>
         <br><br>
-        <input type="submit" value="Register!">
+        <button>Register!</button>
     </form>
 </div>
 

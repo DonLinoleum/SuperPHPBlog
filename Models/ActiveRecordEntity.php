@@ -147,7 +147,7 @@ abstract class ActiveRecordEntity
         {
             return null;
         }
-        var_dump($result);
+       
         return $result[0];
     }
    

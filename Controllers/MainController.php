@@ -1,22 +1,20 @@
 <?php
 namespace Controllers;
 
+use Models\Users\UserActivationService;
+use Models\Users\UsersAuthService;
 
-class MainController
+class MainController extends AbstractController
 {
-   private $view;
-
-   public function __construct()
-   {
-       $this->view = new \View\View (__DIR__ . "/../Templates");
-       
-   }
 
     public function main()
     {
 
         $articles = \Models\Articles\Article::findAll();
-        $this->view->renderHtml("/Main/Main.php",["articles"=>$articles]);
+        $this->view->renderHtml("/Main/Main.php",[
+            "articles"=>$articles,
+            'user'=>UsersAuthService::getUserByToken()
+        ]);
        
     }
     
