@@ -2567,3 +2567,26 @@
 ::1 - - [08/Mar/2022:22:47:40 +0900] "GET /Templates/Main/styleForms.css HTTP/1.1" 304 -
 ::1 - - [08/Mar/2022:22:47:41 +0900] "GET /users/register HTTP/1.1" 200 1800
 ::1 - - [08/Mar/2022:22:48:40 +0900] "-" 408 -
+::1 - - [08/Mar/2022:22:55:07 +0900] "GET /users/register HTTP/1.1" 200 2179
+::1 - - [08/Mar/2022:22:55:07 +0900] "GET /Templates/Main/styles.css HTTP/1.1" 200 2146
+::1 - - [08/Mar/2022:22:55:07 +0900] "GET /Templates/Main/styleForms.css HTTP/1.1" 304 -
+::1 - - [08/Mar/2022:22:55:12 +0900] "GET /users/register HTTP/1.1" 200 2179
+::1 - - [08/Mar/2022:22:55:13 +0900] "GET /users/register HTTP/1.1" 200 2179
+::1 - - [08/Mar/2022:22:55:15 +0900] "GET /users/register HTTP/1.1" 200 2179
+::1 - - [08/Mar/2022:22:55:22 +0900] "GET /users/register HTTP/1.1" 200 2179
+::1 - - [08/Mar/2022:22:55:22 +0900] "GET /Templates/Main/styles.css HTTP/1.1" 304 -
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /users/register HTTP/1.1" 200 2179
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /Templates/Main/styles.css HTTP/1.1" 200 2146
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /Templates/Main/Img/goose.png HTTP/1.1" 200 33121
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /Templates/Main/styleForms.css HTTP/1.1" 200 757
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /Templates/Main/Img/paper.png HTTP/1.1" 200 228518
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /Templates/Main/Img/background.jpg HTTP/1.1" 200 766636
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /Templates/Main/Fonts/2Massj1808Normal.otf HTTP/1.1" 200 65348
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /Templates/Main/Fonts/TabulaPeutingeriana.ttf HTTP/1.1" 200 145880
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /Templates/Main/Fonts/ChristmasReignDecoPersonal.ttf HTTP/1.1" 200 3349224
+::1 - - [08/Mar/2022:22:55:40 +0900] "GET /favicon.ico HTTP/1.1" 404 91
+::1 - - [08/Mar/2022:22:56:19 +0900] "GET /users/register HTTP/1.1" 200 2179
+::1 - - [08/Mar/2022:22:56:19 +0900] "GET /Templates/Main/styles.css HTTP/1.1" 304 -
+::1 - - [08/Mar/2022:22:57:00 +0900] "GET / HTTP/1.1" 200 1594
+::1 - - [08/Mar/2022:22:57:00 +0900] "GET /Templates/Main/styles.css HTTP/1.1" 304 -
+::1 - - [08/Mar/2022:22:58:00 +0900] "-" 408 -
