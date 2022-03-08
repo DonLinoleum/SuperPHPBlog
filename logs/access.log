@@ -2561,3 +2561,9 @@
 ::1 - - [08/Mar/2022:22:42:37 +0900] "GET /users/register HTTP/1.1" 200 1800
 ::1 - - [08/Mar/2022:22:42:38 +0900] "GET /users/login HTTP/1.1" 200 1776
 ::1 - - [08/Mar/2022:22:42:38 +0900] "GET /users/register HTTP/1.1" 200 1800
+::1 - - [08/Mar/2022:22:43:37 +0900] "-" 408 -
+::1 - - [08/Mar/2022:22:47:40 +0900] "GET /users/register HTTP/1.1" 200 1800
+::1 - - [08/Mar/2022:22:47:40 +0900] "GET /Templates/Main/styles.css HTTP/1.1" 304 -
+::1 - - [08/Mar/2022:22:47:40 +0900] "GET /Templates/Main/styleForms.css HTTP/1.1" 304 -
+::1 - - [08/Mar/2022:22:47:41 +0900] "GET /users/register HTTP/1.1" 200 1800
+::1 - - [08/Mar/2022:22:48:40 +0900] "-" 408 -
